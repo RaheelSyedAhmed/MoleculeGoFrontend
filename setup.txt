@@ -1,0 +1,11 @@
+Setup steps:
+
+npm install -g expo-cli
+expo init FOLDERNAME
+
+npm install react-native-maps
+npm install react-navigation
+npm install react-bottom-tab-navigator
+
+expo upgrade
+expo start

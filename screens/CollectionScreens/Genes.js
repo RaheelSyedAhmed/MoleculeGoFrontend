@@ -5,14 +5,25 @@ import base from '../../data/base.json';
 
 
 const Genes = () => {
-    const getCount = base.length;
+    const geneEMIs = base.filter( (emi) => emi.emi_class.includes("blueprint"))
+    
     return (
         <View style={styles.container}>
             <Text style={styles.headerText}> Genes </Text>
-            <Text> {getCount} </Text>
+            {produceViews(geneEMIs)}
         </View>
     );
 }
+
+
+function produceViews(EMIs){
+    return EMIs.map((element) => {
+        return (
+          <View><Text>{element.pk}</Text></View>
+        )
+    })
+}
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
