@@ -1,16 +1,22 @@
 
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView, ScrollView, Image } from 'react-native';
 import base from '../../data/base.json';
-
-
+import Gene from '../../subcomponents/Gene.js';
 
 const Genes = () => {
     const geneEMIs = base.filter( (emi) => emi.emi_class.includes("blueprint"))
     
     return (
         <View style={styles.container}>
-            <Text style={styles.headerText}> Genes </Text>
-            {produceViews(geneEMIs)}
+            <View style={styles.title}> 
+                <Text style={styles.headerText}> Genes </Text>
+            </View>
+            
+            <SafeAreaView style={styles.sav}>
+                <ScrollView>
+                    { produceViews(geneEMIs) }
+                </ScrollView>
+            </SafeAreaView>
         </View>
     );
 }
@@ -19,7 +25,7 @@ const Genes = () => {
 function produceViews(EMIs){
     return EMIs.map((element) => {
         return (
-          <View><Text>{element.pk}</Text></View>
+            <Gene key={element.pk} element={element}></Gene>
         )
     })
 }
@@ -33,11 +39,23 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent:'center'
     },
+    title: {
+        alignItems: 'center',
+        justifyContent:'center',
+        width: "100%",
+        margin: 5, 
+        flex: 1
+    },
+    sav: {
+        alignItems: 'center',
+        justifyContent:'center',
+        flex: 4,
+        width: "90%"
+    },
     headerText: {
         textAlign: 'center',
         fontWeight: 'bold',
-        fontSize: 36,
-        margin: 15
+        fontSize: 36
     }
 });
 

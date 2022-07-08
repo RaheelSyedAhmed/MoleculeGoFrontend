@@ -26,7 +26,7 @@ const Profile = () => {
             <View style = {styles.centralPanel}>
                 <View style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around'}}>
                     <Image 
-                        source={require("../../assets/atp.png")}
+                        source={require("../../assets/atp_new.png")}
                         style={{width: 50, height: 50, paddingTop: 5}}
                         resizeMode={"contain"}
                     />
