@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import * as Location from 'expo-location';
 
 function useLocation(){
     const [region, setRegion] = useState(
@@ -9,9 +10,22 @@ function useLocation(){
             longitudeDelta: 0.005,
         }
     );
+
+    useEffect(() => {
+        (async () => {
+            let { status } = await Location.requestForegroundPermissionsAsync();
+            if (status !== 'granted') {
+                return;
+            }
+            let location = await Location.getCurrentPositionAsync({});
+            
+            setRegion(region => {
+                return { ...region, latitude: location.coords.latitude, longitude: location.coords.longitude }
+            });
+        })();
+    }, []);
+
     
-
-
     return {region, setRegion};
 }
 
