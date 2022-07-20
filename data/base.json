@@ -1322,7 +1322,7 @@
     "uploader": "Claude",
     "pathway": "Antibodies",
     "index": 1,
-    "local_path": "BASE_antibody-heavychain_2.png"
+    "local_path": "BASE_antibody_heavychain_2.png"
   },
  {
     "pk": "EMI-antigen_bindingsite_left",
@@ -1372,7 +1372,7 @@
     "uploader": "Alexandra",
     "pathway": "Antibodies",
     "index": 2,
-    "local_path": "BASE_antigen-bindingsite_right.png"
+    "local_path": "BASE_antigen_bindingsite_right.png"
   },
  {
     "pk": "EMI-ATP",
@@ -1397,7 +1397,7 @@
     "uploader": "Benson",
     "pathway": "Luciferase",
     "index": 1,
-    "local_path": "BASE_ATP.png"
+    "local_path": "BASE_atp.png"
   },
  {
     "pk": "EMI-betatubulin",
