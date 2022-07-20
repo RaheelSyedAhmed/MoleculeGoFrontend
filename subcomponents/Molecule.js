@@ -7,7 +7,7 @@ const Molecule = ( {element} ) => {
     return(
         <TouchableOpacity key={element.pk} style={styles.button}>
             <Image
-                source={require("../assets/molecule_images/BASE_dna.png")}
+                source={Images.paths[key_path]}
                 style={{width: 50, height: 50, paddingTop: 5}}
                 resizeMode={"contain"}
             />
