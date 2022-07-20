@@ -9,6 +9,8 @@ function useLocation(){
             longitudeDelta: 0.005,
         }
     );
+    
+
 
     return {region, setRegion};
 }
