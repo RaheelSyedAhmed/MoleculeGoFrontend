@@ -1,31 +1,42 @@
 import * as React from 'react';
-import MapView from 'react-native-maps';
 import { StyleSheet, Text, View, Dimensions, TouchableOpacity} from 'react-native';
+import MapComponent from '../subcomponents/MapComponent';
+
+function getInitialState() {
+  return {
+    region: {
+      latitude: 37.78825,
+      longitude: -122.4324,
+      latitudeDelta: 0.03,
+      longitudeDelta: 0.03,
+    },
+  };
+}
 
 
 const Map = ({navigation}) => {
-    return (
-        <View style={styles.container}>
-            <View style={styles.selector}>
-              <TouchableOpacity
-                style={styles.selectorButton}
-              >
-                <Text style={{fontWeight: 'bold', fontSize: 12, color: '#FFFFFF'}}> Gene </Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.selectorButton}
-              >
-                <Text style={{fontWeight: 'bold', fontSize: 12, color: '#FFFFFF'}}> Amino Acid </Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.selectorButton}
-              >
-                <Text style={{fontWeight: 'bold', fontSize: 12, color: '#FFFFFF'}}> Protein </Text>
-              </TouchableOpacity>
-            </View>
-            <MapView style={styles.map} />
-        </View>
-    );
+  return (
+      <View style={styles.container}>
+          <View style={styles.selector}>
+            <TouchableOpacity
+              style={styles.selectorButton}
+            >
+              <Text style={{fontWeight: 'bold', fontSize: 12, color: '#FFFFFF'}}> Gene </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.selectorButton}
+            >
+              <Text style={{fontWeight: 'bold', fontSize: 12, color: '#FFFFFF'}}> Amino Acid </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.selectorButton}
+            >
+              <Text style={{fontWeight: 'bold', fontSize: 12, color: '#FFFFFF'}}> Protein </Text>
+            </TouchableOpacity>
+          </View>
+          <MapComponent></MapComponent>
+      </View>
+  );
 }
 
 const styles = StyleSheet.create({
