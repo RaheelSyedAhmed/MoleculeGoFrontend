@@ -1,18 +1,18 @@
 import MapView from 'react-native-maps';
 import * as React from 'react';
+import {useState} from 'react';
 import { StyleSheet, Text, View, Dimensions, TouchableOpacity} from 'react-native';
+import useLocation from '../hooks/useLocation.js';
+
 
 
 const MapComponent = () => {
+    const regionHook = useLocation();
+
     return (
         <MapView 
             style={styles.map}
-            region={{
-              latitude: 37.78825,
-              longitude: -122.4324,
-              latitudeDelta: 0.005,
-              longitudeDelta: 0.005,
-            }}
+            region={regionHook.region}
             zoomEnabled={false}
             scrollEnabled={false}
         />
